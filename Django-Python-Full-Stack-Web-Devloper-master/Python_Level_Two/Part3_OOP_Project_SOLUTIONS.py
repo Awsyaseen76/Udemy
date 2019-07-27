@@ -168,3 +168,8 @@ while user.still_has_cards() and comp.still_has_cards():
 
 print("Great Game, it lasted: "+str(total_rounds))
 print("A war occured "+str(war_count)+" times.")
+
+if comp.still_has_cards:
+   print('The winner is: ', user.name)
+elif user.still_has_cards:
+   print('The winner is: ', comp.name)

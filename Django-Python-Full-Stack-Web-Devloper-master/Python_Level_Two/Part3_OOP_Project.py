@@ -32,21 +32,41 @@ from random import shuffle
 SUITE = 'H D S C'.split()
 RANKS = '2 3 4 5 6 7 8 9 10 J Q K A'.split()
 
-class Deck:
+# print(SUITE)
+# print(RANKS)
+
+class Deck():
     """
     This is the Deck Class. This object will create a deck of cards to initiate
     play. You can then use this Deck list of cards to split in half and give to
     the players. It will use SUITE and RANKS to create the deck. It should also
     have a method for splitting/cutting the deck in half and Shuffling the deck.
     """
-    pass
+    def __init__(self):
+        self.deck = []
+        for s in SUITE:
+            for r in RANKS:
+                self.deck.append(s+r)
+        shuffle(self.deck)
+    
+    def cutting(self):
+        divider = int(len(self.deck)/2)
+        print('###########################')
+        self.hand1 = self.deck[:divider]
+        self.hand2 = self.deck[divider:]
 
-class Hand:
+
+
+class Hand():
     '''
     This is the Hand class. Each player has a Hand, and can add or remove
     cards from that hand. There should be an add and remove card method here.
     '''
-    pass
+    def __init__(self):
+        Deck.__init__(self)
+        
+        
+
 
 class Player:
     """
@@ -59,6 +79,26 @@ class Player:
 ######################
 #### GAME PLAY #######
 ######################
+new_dick = Deck()
+print(len(new_dick.deck))
+print(new_dick.deck)
+print(new_dick.cutting())
+print(new_dick.hand1)
+print(new_dick.hand2)
+
+for i in new_dick.hand1:
+    if i in new_dick.hand2:
+        print('True')
+
+
+# hand_one = Hand().hand1
+# hand_two = Hand().hand2
+
+# print(hand_one)
+# print(hand_two)
+
+
 print("Welcome to War, let's begin...")
+
 
 # Use the 3 classes along with some logic to play a game of war!

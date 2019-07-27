@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <title>Access Records</title>
+</head>
+<body>
+    <h1>Access Records list</h1>
+    {% if access_records %}
+        <div class="DjangoTable">
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Date</th>
+                </thead>
+                {% for rec in access_records %}
+                    <tr>
+                        <td>{{ rec.name }}</td>
+                        <td>{{ rec.date }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% else %}
+        <p>There is no records!</p>
+    {% endif %}
+
+
+    <h2>Another tablle</h2>
+    <table>
+        <thead>
+            <th>test1</th>
+            <th>test2</th>
+        </thead>
+        <tr>
+            <td>One</td>
+            <td>Two</td>
+        </tr>
+    </table>
+</body>
+</html>

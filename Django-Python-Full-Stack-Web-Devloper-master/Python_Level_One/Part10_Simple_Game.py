@@ -56,9 +56,6 @@ def guess_game():
             print('You have {} match, {} close, {} not in the list...'.format(match, close, nope))
 
                 
-        
-
-
 
 def get_a_guess():
     guess = input("What is your guess? ")
@@ -70,21 +67,10 @@ guess_game()
 
 
 
-
-
 # Another hint:
 # guess = input("What is your guess? ")
 # guess_list = list(map(int, guess))
 # print(guess_list)
-# if the_list == guess_list:
-#     print('Great! you gess it....')
-
-# for i in the_list:
-#     if i in guess:
-#         if 
-# # 234
-
-
 
 
 # Think about how you will compare the input to the random number, what format
